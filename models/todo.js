@@ -110,7 +110,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           notNull: true,
-          notEmpty: {
+          Empty: {
             msg: "Please enter a Valid date",
           },
         },

@@ -1,7 +1,6 @@
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background-color: coral;
-  opacity : 0.6;
+  background-color: rgb(117 190 218 / 0.5);;
 }
 
 .todoItem:hover .trashIcone {

@@ -100,8 +100,8 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notNull: true,
           len: {
-            args: 5,
-            msg: "Title length must be greater than 5",
+            args: 3,
+            msg: "Title length must be greater than 3",
           },
         },
       },

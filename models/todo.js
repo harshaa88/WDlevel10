@@ -98,14 +98,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          notNull: false,
-            msg: "Title must not be Empty",
-        },
-        validate: {
           notNull: true,
           len: {
             args: 5,
             msg: "Title length must be greater than 5",
+          notNull: false,
+            msg: "Title must not be Empty",
           },
         },
       },
@@ -113,13 +111,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATEONLY,
         allowNull: false,
         validate: {
-          notNull: false,
-            msg: "Date must be selected",
-        },
-        validate: {
           notNull: true,
           notEmpty: {
             msg: "Please enter a Valid date",
+          },
+          notNull: false,
+          Empty : {
+            msg: "Date must be selected",
           },
         },
       },

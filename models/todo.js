@@ -101,7 +101,7 @@ module.exports = (sequelize, DataTypes) => {
           notNull: true,
           len: {
             args: 5,
-            msg: "Title is empty or less than length 5",
+            msg: "Title msut be greater than length 5",
           },
         },
       },

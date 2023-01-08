@@ -273,8 +273,8 @@ app.post("/users", async (req, res) => {
       return res.redirect("/signup");
     } else if (error.name == "SequelizeUniqueConstraintError") {
       error.errors.forEach((e) => {
-        if (e.message == "email must be Unique") {
-          req.flash("error", "User with this email already exists");
+        if (e.message == "email must be unique") {
+          req.flash("error", "User with this Email already exists");
         }
       });
       return res.redirect("/signup");

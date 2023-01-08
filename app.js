@@ -60,7 +60,7 @@ passport.use(
             }
           } else {
             return done(null, false, {
-              message: "With This email user does not exists",
+              message: "User does not exists with this Email.",
             });
           }
         })
@@ -168,8 +168,8 @@ app.post("/todos", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
         if (e.message == "Title length must be greater than 5") {
           req.flash("error", "Title length should be greater than or equal to 5");
         }
-        if (e.message == "Please enter the valid date") {
-          req.flash("error", "Please enter the valid date");
+        if (e.message == "Please enter the Valid date") {
+          req.flash("error", "Please enter the Valid date");
         }
       });
       return res.redirect("/todos");
@@ -197,7 +197,7 @@ app.delete(
   "/todos/:id",
   connectEnsureLogin.ensureLoggedIn(),
   async (req, res) => {
-    console.log("We have to delete a Todo with ID: ", req.params.id);
+    console.log("We have to delete Todo with ID: ", req.params.id);
     try {
       const affectedRow = await Todo.remove(req.params.id, req.user.id);
       res.send(affectedRow ? true : false);
@@ -263,8 +263,8 @@ app.post("/users", async (req, res) => {
     console.log(error.name);
     if (error.name == "SequelizeValidationError") {
       error.errors.forEach((e) => {
-        if (e.message == "Please provide firstName") {
-          req.flash("error", "Please provide firstName");
+        if (e.message == "Please provide FirstName") {
+          req.flash("error", "Please provide FirstName");
         }
         if (e.message == "Please provide email_id") {
           req.flash("error", "Please provide email_id");
@@ -273,7 +273,7 @@ app.post("/users", async (req, res) => {
       return res.redirect("/signup");
     } else if (error.name == "SequelizeUniqueConstraintError") {
       error.errors.forEach((e) => {
-        if (e.message == "email must be unique") {
+        if (e.message == "email must be Unique") {
           req.flash("error", "User with this email already exists");
         }
       });

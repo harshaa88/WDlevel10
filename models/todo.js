@@ -95,6 +95,7 @@ module.exports = (sequelize, DataTypes) => {
   Todo.init(
     {
       title: {
+        required,
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -102,22 +103,17 @@ module.exports = (sequelize, DataTypes) => {
           len: {
             args: 5,
             msg: "Title length must be greater than 5",
-          notNull: false,
-            msg: "Title must not be Empty",
           },
         },
       },
       dueDate: {
+        required,
         type: DataTypes.DATEONLY,
         allowNull: false,
         validate: {
           notNull: true,
           notEmpty: {
             msg: "Please enter a Valid date",
-          },
-          notNull: false,
-          Empty : {
-            msg: "Date must be selected",
           },
         },
       },

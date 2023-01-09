@@ -1,5 +1,6 @@
 body {
   font-family: Impact, Calibri, "Gill Sans MT", sans-serif;
+  background-color: rgb(117 190 218 / 0.5);
 }
 
 .todoItem:hover .trashIcone {
